@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Po-Lung, Wu",
+  "classifications": [ "Common", "Console","Api" ],
+  "identity": "DotNetCoreWeb.AdminLTE.ProjectTemplates",
+  "name": "A Project Template Based on .Net Core 6.0 with AdminLTE ",
+  "shortName": "adminlte-template",
+  "sourceName":"DotNetCoreWeb.AdminLTE.ProjectTemplates",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  }
+}
