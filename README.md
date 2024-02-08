@@ -2,6 +2,7 @@
 This is a projects for dotNet Core Web Applications with modern Admin UI (based on [AdminLTE](https://adminlte.io))
 ## 1. Getting Started
 You can copy from NuGet or GitHub
+![Imgur](https://i.imgur.com/BeiRH6J.png)
 
 ## 2. Prerequisites
 You mut install the software 
