@@ -1,5 +1,6 @@
 using Asp.Versioning;
 using DotNetCoreWeb.AdminLTE.ProjectTemplates.Services.User;
+using DotNetCoreWeb.AdminLTE.ProjectTemplates.ViewModels.APIs.v2;
 using DotNetCoreWeb.AdminLTE.ProjectTemplates.ViewModels.User;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,11 +17,21 @@ public class UserController : ControllerBase
     {
         _userService = userService;
     }
-    
+
     [HttpGet]
-    public async Task<List<UserViewModel>> Index()
+    public async Task<IActionResult> Index()
     {
-        var data = await _userService.ListAsync();
-        return data;
+        IActionResult result;
+        try
+        {
+            var data = await _userService.ListAsync();
+            result = ApiResultFactory.Create(data);
+        }
+        catch (Exception exp)
+        {
+            Console.WriteLine(exp);
+            result = ApiResultFactory.Create(exp);
+        }
+        return result;
     }
 }

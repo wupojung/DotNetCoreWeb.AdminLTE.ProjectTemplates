@@ -11,7 +11,7 @@ public class Program
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
-        
+
         // 啟動Autofac IoC框架
         builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
         builder.Host.ConfigureContainer<ContainerBuilder>(_builder =>
@@ -19,22 +19,24 @@ public class Program
 
         // Add services to the container.
         builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
-
+     
         // Add api versioning
         builder.Services.AddApiVersioning(
-                option =>
+                options =>
                 {
-                    option.ReportApiVersions = true;
-                    option.AssumeDefaultVersionWhenUnspecified = true;
-                    option.DefaultApiVersion = new ApiVersion(1, 0);
+                    options.ReportApiVersions = true;
+                    options.AssumeDefaultVersionWhenUnspecified = true;
+                    options.DefaultApiVersion = new ApiVersion(2.0);
                 })
             .AddApiExplorer(options =>
             {
                 options.GroupNameFormat = "'v'VVV";
                 options.SubstituteApiVersionInUrl = true;
+
+                //options.AssumeDefaultVersionWhenUnspecified = true;
+                //options.DefaultApiVersion = new ApiVersion(2.0);
             });
 
-        
 
         // Setup Database 
         AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
