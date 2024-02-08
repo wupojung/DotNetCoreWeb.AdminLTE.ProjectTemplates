@@ -28,6 +28,16 @@ dotnet add package Npgsql --version 8.0.1
 dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL --version 7.0.11
 dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL.Design --version 1.1.0
 ```
+Login DB
+```shell
+psql -U postgres
+```
+Create Database,Usernmae
+```shell
+postgres=# create database adminlte;
+postgres=# create user adminlte with encrypted password '12345678';
+postgres=# grant all privileges on database adminlte to adminlte;
+```
 
 ## 5. Including List 
 * [AdminLTE 3.2.0](https://adminlte.io/themes/v3/) UI

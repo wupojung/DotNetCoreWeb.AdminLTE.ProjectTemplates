@@ -6,7 +6,7 @@ namespace DotNetCoreWeb.AdminLTE.ProjectTemplates.Core;
 
 public class SqlContext : DbContext
 {
-    private readonly static string connectionString = "Host=localhost;Database=meta;Username=meta_user;Password=123456";
+    private readonly static string connectionString = "Host=localhost;Database=adminlte;Username=adminlte;Password=12345678";
 
     public SqlContext(DbContextOptions<SqlContext> options)
         : base(options)
