@@ -37,11 +37,20 @@ Create Database,Usernmae
 postgres=# create database adminlte;
 postgres=# create user adminlte with encrypted password '12345678';
 postgres=# grant all privileges on database adminlte to adminlte;
+postgres=# GRANT ALL ON DATABASE adminlte TO adminlte;
+postgres=# ALTER DATABASE adminlte OWNER TO adminlte;
+```
+
+```shell
+dotnet tool install --global dotnet-ef --version 6.0.26
+dotnet ef migrations add InitialUser
+dotnet ef database update
 ```
 
 ## 5. Including List 
 * [AdminLTE 3.2.0](https://adminlte.io/themes/v3/) UI
 * [Asp.Versioning.Mvc](https://www.nuget.org/packages/Asp.Versioning.Mvc.ApiExplorer)  api versioning 
+* [Autofac](https://www.nuget.org/packages/Autofac)  IoC container
 
 ## 6. Sample 
 ### 6.1 Api Versioning 

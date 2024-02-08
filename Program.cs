@@ -1,4 +1,8 @@
 using Asp.Versioning;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
+using DotNetCoreWeb.AdminLTE.ProjectTemplates.Core;
+using DotNetCoreWeb.AdminLTE.ProjectTemplates.Services.User;
 
 namespace DotNetCoreWeb.AdminLTE.ProjectTemplates;
 
@@ -7,6 +11,11 @@ public class Program
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+        
+        // 啟動Autofac IoC框架
+        builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+        builder.Host.ConfigureContainer<ContainerBuilder>(_builder =>
+            _builder.RegisterModule(new AutofacModuleRegister()));
 
         // Add services to the container.
         builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
@@ -24,6 +33,14 @@ public class Program
                 options.GroupNameFormat = "'v'VVV";
                 options.SubstituteApiVersionInUrl = true;
             });
+
+        
+
+        // Setup Database 
+        AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+        AppContext.SetSwitch("Npgsql.DisableDateTimeInfinityConversions", true);
+        builder.Services.AddDbContext<SqlContext>();
+
 
         var app = builder.Build();
 
