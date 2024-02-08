@@ -6,5 +6,22 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     </PropertyGroup>
+    <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.26" />
+    </ItemGroup>
+    <ItemGroup>
+      <Content Update="Areas\Views\_ViewImports.cshtml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="Areas\Views\Shared\_Layout.cshtml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+    <ItemGroup>
+      <AdditionalFiles Include="Areas\Admin\Views\Home\Index.cshtml" />
+      <AdditionalFiles Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+      <AdditionalFiles Include="Areas\Admin\Views\_ViewImports.cshtml" />
+      <AdditionalFiles Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    </ItemGroup>
 
 </Project>
