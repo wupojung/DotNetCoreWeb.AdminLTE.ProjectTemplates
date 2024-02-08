@@ -9,6 +9,10 @@
     <ItemGroup>
       <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="6.4.0" />
       <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.26" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+      <PackageReference Include="Npgsql" Version="8.0.1" />
+      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.11" />
+      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.Design" Version="1.1.0" />
     </ItemGroup>
     <ItemGroup>
       <Content Update="Areas\Views\_ViewImports.cshtml">

@@ -21,6 +21,13 @@ git clone https://github.com/wupojung/DotNetCoreWeb.AdminLTE.ProjectTemplates.gi
 ```
 ## 4. Templates Settings
 All configuration settings contains in **appsettings.json**.
+### 4.1 Database
+* PostgreSQL
+```shell
+dotnet add package Npgsql --version 8.0.1
+dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL --version 7.0.11
+dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL.Design --version 1.1.0
+```
 
 ## 5. Including List 
 * [AdminLTE 3.2.0](https://adminlte.io/themes/v3/) UI
