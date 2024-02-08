@@ -1,3 +1,5 @@
+using Asp.Versioning;
+
 namespace DotNetCoreWeb.AdminLTE.ProjectTemplates;
 
 public class Program
@@ -8,6 +10,20 @@ public class Program
 
         // Add services to the container.
         builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
+
+        // Add api versioning
+        builder.Services.AddApiVersioning(
+                option =>
+                {
+                    option.ReportApiVersions = true;
+                    option.AssumeDefaultVersionWhenUnspecified = true;
+                    option.DefaultApiVersion = new ApiVersion(1, 0);
+                })
+            .AddApiExplorer(options =>
+            {
+                options.GroupNameFormat = "'v'VVV";
+                options.SubstituteApiVersionInUrl = true;
+            });
 
         var app = builder.Build();
 
@@ -23,7 +39,7 @@ public class Program
         app.UseStaticFiles();
 
         app.UseRouting();
-        
+
         app.UseAuthentication(); // first then UseAuthorization
         app.UseAuthorization();
 

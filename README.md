@@ -23,7 +23,14 @@ git clone https://github.com/wupojung/DotNetCoreWeb.AdminLTE.ProjectTemplates.gi
 All configuration settings contains in **appsettings.json**.
 
 ## 5. Including List 
-* AdminLTE 3.2.0
+* [AdminLTE 3.2.0](https://adminlte.io/themes/v3/) UI
+* [Asp.Versioning.Mvc](https://www.nuget.org/packages/Asp.Versioning.Mvc.ApiExplorer)  api versioning 
+
+## 6. Sample 
+### 6.1 Api Versioning 
+This function based on [aspnet-api-versioning](https://github.com/dotnet/aspnet-api-versioning).
+The setting is on the **Program.cs**
+You can find two **EchoController** on the Controllers\APIs  
 
 ## Authors
 ## License
@@ -31,3 +38,5 @@ This project is licensed under the MIT License.
 ## Acknowledgments
 * [Abdullah Almasaeed](https://adminlte.io/about) for great [AdminLTE](https://adminlte.io) Template project.
 * [Leonid Shishkin](https://github.com/leonex) for great [AdminLTE-Starter-Kit](https://github.com/dotnet-express/AdminLTE-Starter-Kit) Template project.
+## Ref
+* [WebApi Multi Versioning](https://dotblogs.com.tw/yc421206/2022/03/13/support_multiple_versions_of_asp_net_core_web_api#google_vignette)
